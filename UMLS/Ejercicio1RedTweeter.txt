@@ -1,0 +1,40 @@
+//www.plantuml.com/plantuml/png/RKzDImCn4BtFhmXxIhTiqUjIbdhiIR5w4f5q7KjmaqWoGN7rlvlceutY9PbvysRUUnj7mf9N4xXNgT-45OgDat3kYiZAlIVSZaRlv2Uo2u0uOVVE2olD39qsQc-ntmMgFi1wFLeKXCEG6VpNV05BdAIIMbWUwWFItJiYyKN_qCRg4PPq_34HB9uwhoEXZ-y2lekJsAETA-aCyKgjkF7fxtCV667fF8vtOQl3zeiOaTqOHpFy4GkX2J_8L9bhuUiZY9hNdChlBJvHkdBUAzW_8RCpnhfkO4tRH4kG4oOmPt9jaybGxh7LwcjWPQK0gJ-Hqf7B9eM33UfdhwOV
+@startuml
+skinparam classAttributeIconSize 0
+
+class Usuario{
+-nombre:String
+<<create>>Usuario(nombre:String)
++eliminar()
++getTweet():[*Tweet]
++tweetear()
++retweetear(unTweet:Tweet)
+}
+
+class Tweeter{
+<<create>>Tweeter()
++eliminarUsuario(usuario:Usuario)
++crearUsuario()
+}
+
+
+Interface Post{
+
+}
+
+class Tweet{
+-texto:String
+<<create>>TweetOringen(texto:String)
+}
+
+class Re_tweet{
+<<create>>Re_tweet(unTweet:Tweet)
+}
+
+Usuario  --> "*" Post
+Tweeter --> "usuarios*"Usuario
+Re_tweet ..|>  Post
+Tweet ..|> Post
+
+Re_tweet --> "1" Tweet
+@enduml

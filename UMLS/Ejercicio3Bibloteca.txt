@@ -1,0 +1,25 @@
+//www.plantuml.com/plantuml/png/PO-nIWGn48RxUOgmrPrBGDihv1Gih1Tin68s3Z6QP8wPB8Y7x-uQJ5oq-I7vvl-OWQCMbBAa2FeMyWa5at4HLMzAaJ0lXUuTvobyaBa4gCJSXZbo8OTd6D4BUPI9NU1TpOD-vnv6UZ-nb1-ck_rXMetPmoSqqGEpl13fNPqaEODjfQshDyTE7oj-CfNhhxgPArvrcTCirB2DvF6L-vCIXhZfziECjTTck1Ygvk_trV1lSO0ZvUSbnIy0
+@startuml
+skinparam classAttributeIconSize 0
+
+class Bibloteca{
++agregarSocio(Socio:socio)
++exportarSocios():String
+}
+
+
+class VoorheesExporter{
+-exportar(Socio:socio):String
++exportar([Socio] socios):String
+}
+
+class Socio{
+-nombre:String
+-legajo:String
+-email:String
+}
+
+Bibloteca --> "*"Socio
+Bibloteca --> "1" VoorheesExporter
+
+@enduml
