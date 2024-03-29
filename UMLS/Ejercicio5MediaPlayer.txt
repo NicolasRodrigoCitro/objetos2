@@ -1,0 +1,32 @@
+//www.plantuml.com/plantuml/png/XP6zQaCn38LtFON7X72XSmYNP2bqA1G2tHLR1DCRsyXowGzzzwfMAOOGkjX6Ej_H4TvNGPPsMQ2-n5IGyUByWhKUH3YUcj23p-aOFyZT0PwgC7enXNka4D5zmiRzDSg2xwlrzgXiEiCNW2aFBSJiw4qeXO6xfGvOXFXAFxt6G7dx_7CgGneLDhkTrvVGFFzYg_KjOpDwqXvnZtqcwIMLzliQDAvFl8yB_R-20MD45J4Lpg5v6fK0OvnfciqKR0sh33wmry7wJzy0
+@startuml
+skinparam classAttributeIconSize 0
+abstract class Media {
++ abstract play():String
+}
+
+class Audio extends Media {
++play():String
+}
+
+class Adapter extends Media {
+-video:VideoStream 
++<<create>>Adapter()
++play():String
+}
+
+class MediaPlayer {
++ getMedia():Media
++play():String
+}
+class VideoFile extends Media {
++play():String
+}
+class VideoStream {
++reproduce():String
+}
+
+
+MediaPlayer --> Media
+Adapter --> VideoStream
+@enduml

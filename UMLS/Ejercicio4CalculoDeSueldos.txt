@@ -1,0 +1,32 @@
+//www.plantuml.com/plantuml/png/fP31IWCn48RlUOeSbLBmlATMMx0tQNs1sUHdIKqc9JEHOl7TJSLbXGf2Uml_H_W-PY5AHMkAHju27wXGiYwIo5ArXBugDYxpBdp0FfXlODVf444-svEPIKNq-Uw-suAYDJCxG5SGLy4wpcsbNhIGqpFUJLyksD875p9J7F6d-P6-a10hB8uAzbF4oSnT0y6JNnyfWI5Ri0y-IxTXnO3I79VQVsoHMEal6KJRuocyXzWzvjncdWgUm_wNTdvUXue6haWPIr0ICLXnOyqqvqAomckXdlRvgYCjmBwc-0K0
+@startuml
+skinparam classAttributeIconSize 0
+class Empleado {
++sueldo():Real 
++ getDescuento():Real
++ abstract getSueldo():Real
++ abstract getAdicional():Real
+}
+
+class Pasante extends Empleado{
+-cantidadExamenesRendidos:Integer
++ getSueldo():Real
++ getAdicional():Real
+}
+
+class Planta extends Empleado{
+-estadoCivil:Boolean
+-cantidadHijos:Integer
+-antiguedad:Integer
++ getSueldo():Real
++ getAdicional():Real
+}
+class Permanente extends Empleado{
+-estadoCivil:Boolean
+-cantidadHijos:Integer
+-cantidadHorasDeTrabajo:Integer
++ getSueldo():Real
++ getAdicional():Real
+}
+
+@enduml

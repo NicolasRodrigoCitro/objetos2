@@ -1,0 +1,58 @@
+//www.plantuml.com/plantuml/png/rTF1IWGn30RWUvyYHyMBPqyhdWG5ONo1R2UitMtJqgOWYkzkdGv52EAvrp__P3uAEHJ1B3LuKowE4sOCO3sMSY-ItR4AFTh8Y_iWk3NR09xmr3w9GEz2l1PuHewVvWREjUKFaINZrKy6CKKc5hg-MzekFa4h1HJxzk9eRIMLlxepwRprCP7NyGxHWoL5U_aLVncpsxV9NF8Exp-UIjxXsvu9tNt_L723nz9SLle53_E8_t2DWWAgWgRg3Tgi6mElvl-yyBZd0_5QW_y6
+@startuml
+skinparam classAttributeIconSize 0
+class Lagarto extends Mano{
++ jugarContra(Mano oponente):String 
++ matchPiedra():String 
++ matchTijera():String 
++ matchPapel():String 
++ matchLagarto():String 
++ matchSpock():String 
+}
+
+
+class Spock extends Mano{
++ jugarContra(Mano oponente):String 
++ matchPiedra():String 
++ matchTijera():String 
++ matchPapel():String 
++ matchLagarto():String 
++ matchSpock():String 
+}
+
+class Piedra extends Mano{
++ jugarContra(Mano oponente):String 
++ matchPiedra():String 
++ matchTijera():String 
++ matchPapel():String 
++ matchLagarto():String 
++ matchSpock():String 
+}
+class Papel extends Mano{
++ jugarContra(Mano oponente):String 
++ matchPiedra():String 
++ matchTijera():String 
++ matchPapel():String 
++ matchLagarto():String 
++ matchSpock():String 
+}
+class Tijera extends Mano{
++ jugarContra(Mano oponente):String 
++ matchPiedra():String 
++ matchTijera():String 
++ matchPapel():String 
++ matchLagarto():String 
++ matchSpock():String 
+}
+
+abstract class Mano{
++ abstract matchPiedra():String 
++ abstract matchTijera():String 
++ abstract  matchPapel():String 
++ abstract matchLagarto():String 
++ abstract matchSpock():String 
++ abstract jugarContra(Mano oponente):String 
+}
+
+
+@enduml

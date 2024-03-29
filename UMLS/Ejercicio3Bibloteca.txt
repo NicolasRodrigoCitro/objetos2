@@ -1,25 +1,35 @@
-//www.plantuml.com/plantuml/png/PO-nIWGn48RxUOgmrPrBGDihv1Gih1Tin68s3Z6QP8wPB8Y7x-uQJ5oq-I7vvl-OWQCMbBAa2FeMyWa5at4HLMzAaJ0lXUuTvobyaBa4gCJSXZbo8OTd6D4BUPI9NU1TpOD-vnv6UZ-nb1-ck_rXMetPmoSqqGEpl13fNPqaEODjfQshDyTE7oj-CfNhhxgPArvrcTCirB2DvF6L-vCIXhZfziECjTTck1Ygvk_trV1lSO0ZvUSbnIy0
+//www.plantuml.com/plantuml/png/bP5BQuH0383l-HM39wq8xNKfoswXXvRUXDv73TDfvo6J2ANI_zvrVBWe5FOID5yUd-P4B0DtrW1zQTVA8AseZIGwCmTTTOmljNUb_a5n3n689rqPprZB7k1tdykb2gXaA7sjVHgZe25caEDtwmDFZDBiK7BGJa6ka9yZmt39ldiVFX1fJa5ELtnB1KuFsQApBUdNrUcR9dwC0iVHYx83ZHh5KdIjFKlEmoFheN3ULW5dMXXKyjClhsYbDclhrFjAmy-qhS5p8zjHdj4rUsLngtF4_uglo-Fb09QhYQ8uYkGXsKfiA-wIE1zsdp7WIxzO0PpGDPqrVm00
 @startuml
 skinparam classAttributeIconSize 0
-
 class Bibloteca{
-+agregarSocio(Socio:socio)
+
+}
+class Bibloteca{
++agregarSocio(Socio socio)
 +exportarSocios():String
++getExporter():VoorheesExporter
++setExporter(VoorheesExporter exporter)
 }
-
-
 class VoorheesExporter{
--exportar(Socio:socio):String
-+exportar([Socio] socios):String
++exportar(List<Socio> socios):string
+-exportar(Socio socio):String
 }
-
 class Socio{
 -nombre:String
 -legajo:String
 -email:String
 }
 
-Bibloteca --> "*"Socio
-Bibloteca --> "1" VoorheesExporter
+class JsonSimpleAdapter extends VoorheesExporter {
++exportar(List<Socio> socios):string
+-exportarSocio(Socio socio):String
+}
+class JsonSimple{
 
+}
+
+
+Bibloteca --> "1"VoorheesExporter
+Bibloteca --> "*"Socio
+JsonSimpleAdapter -->"1" JsonSimple
 @enduml
